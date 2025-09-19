@@ -15,29 +15,11 @@ Key Features
 Implementation Highlights
 -------------------------
 
-Component
-
-Description
-
-Planet Hierarchy
-
-`Planet` is abstract and defines `displayInfo()` and `classifyBody()`. Subclasses override these methods and invoke `super.displayInfo()` / `super.classifyBody()` where appropriate.
-
-ID Generation
-
-A static counter (`nextID`) ensures each planet receives a sequential, immutable identifier. The logic was refined after initial debugging.
-
-Gravity Computation
-
-Implemented in `calculateGravity()` and integrated into each subclass’s display routine.
-
-Sorting & Top‑5 Retrieval
-
-Custom comparator sorts planets by radiation level; the top‑5 method returns the highest‑radiation entries (bug fixed after discovery).
-
-Driver UI
-
-Multi‑layer menu system guides users through creation, deletion, search, and reporting functions. Input validation and error handling were added iteratively.
+*   Planet Hierarchy – `Planet` is abstract and defines `displayInfo()` and `classifyBody()`. Subclasses override these methods and invoke `super.displayInfo()` / `super.classifyBody()` where appropriate.
+*   ID Generation – A static counter (`nextID`) ensures each planet receives a sequential, immutable identifier. The logic was refined after initial debugging.
+*   Gravity Computation – Implemented in `calculateGravity()` and integrated into each subclass’s display routine.
+*   Sorting & Top‑5 Retrieval – Custom comparator sorts planets by radiation level; the top‑5 method returns the highest‑radiation entries (bug fixed after discovery).
+*   Driver UI – Multi‑layer menu system guides users through creation, deletion, search, and reporting functions. Input validation and error handling were added iteratively.
 
 Development Process
 -------------------
