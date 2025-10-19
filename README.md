@@ -1,46 +1,100 @@
-Project Overview
-================
+# Solar-System Project
 
-This project implements a planetary simulation consisting of three concrete planet types—GasPlanet, IcePlanet, and AbstractPlanet—and a supporting PlanetSystem API. The application includes a command‑line driver that lets users interact with the system via a menu‑driven interface.
+## Table of Contents
 
-Key Features
-------------
+1.  [Overview]
+2.  [Features]
+3.  [Implementation Highlights]
+4.  [Development Process]
+5.  [Future Improvements]
+6.  [Project Structure]
+8.  [License]
+9.  [Contact]
 
-*   Object‑Oriented Design – Abstract base class `Planet` defines common attributes and behavior; concrete subclasses implement specific logic for gas and ice planets.
-*   Unique Identifier Management – Static `nextID` field guarantees a unique `planetID` for each instantiated planet.
-*   Gravity Calculation – Each planet computes its surface gravity based on mass and radius.
-*   Extensible API – `PlanetSystem` provides CRUD operations, sorting, and retrieval of the top‑5 planets by radiation level.
-*   Interactive CLI Driver – Menu‑driven main program supports adding, deleting (by ID or index), searching, and displaying planets.
+## Overview
 
-Implementation Highlights
--------------------------
+Solar-System is a planetary simulation application implementing three planet types—GasPlanet, IcePlanet, and AbstractPlanet—using an object-oriented approach. The project features a comprehensive `PlanetSystem` API and an interactive command-line interface (CLI) for managing and exploring planetary data.
 
-*   Planet Hierarchy – `Planet` is abstract and defines `displayInfo()` and `classifyBody()`. Subclasses override these methods and invoke `super.displayInfo()` / `super.classifyBody()` where appropriate.
-*   ID Generation – A static counter (`nextID`) ensures each planet receives a sequential, immutable identifier. The logic was refined after initial debugging.
-*   Gravity Computation – Implemented in `calculateGravity()` and integrated into each subclass’s display routine.
-*   Sorting & Top‑5 Retrieval – Custom comparator sorts planets by radiation level; the top‑5 method returns the highest‑radiation entries (bug fixed after discovery).
-*   Driver UI – Multi‑layer menu system guides users through creation, deletion, search, and reporting functions. Input validation and error handling were added iteratively.
+## Features
 
-Development Process
--------------------
+- **Object-Oriented Design**  
+  Abstract base class `Planet` defines shared attributes and behaviors. Concrete subclasses (`GasPlanet`, `IcePlanet`) implement specific logic.
 
-1.  Class Construction – Started by defining the abstract `Planet` class and its concrete subclasses. Initial difficulties with static ID generation were resolved by refactoring the `nextID` logic.
-2.  API Development – Built the `PlanetSystem` service layer, exposing methods for addition, removal, lookup, sorting, and top‑5 extraction.
-3.  Iterative Refinement – While integrating the API with the driver, discovered and corrected several typographical bugs and logical errors (e.g., improper use of `deleteByPlanetID`).
-4.  Testing & Validation – Conducted manual tests through the CLI driver, confirming that all CRUD operations and sorting mechanisms behaved as expected.
+- **Unique Identifier Management**  
+  Every planet gets a unique, immutable `planetID` via a static counter.
 
-Challenges & Resolutions
-------------------------
+- **Gravity Calculation**  
+  Each planet can calculate its surface gravity based on physical properties.
 
-*   Static ID Management – Initially ignored the requirement; later implemented a thread‑safe static counter to guarantee uniqueness.
-*   Abstract Method Invocation – Needed to correctly call `super.displayInfo()` and `super.classifyBody()` from subclasses; resolved by ensuring proper `@Override` annotations and method signatures.
-*   Sorting Logic – The highest‑radiation sorting algorithm contained a subtle bug; fixed by revisiting the comparator implementation and adding unit tests.
-*   Menu Complexity – Designed a clear, hierarchical menu structure to improve usability while preserving flexibility for future extensions.
+- **Extensible API**  
+  The `PlanetSystem` class offers CRUD operations, sorting, and retrieval of the top 5 planets by radiation level.
 
-Possible Future Improvements
--------------------
+- **Interactive CLI Driver**  
+  A menu-driven interface lets users add, delete (by ID or index), search, and display planet information.
 
-*   Add automated unit tests (JUnit) for all public methods.
-*   Refactor the driver to support a graphical UI or web front‑end.
-*   Introduce persistence (e.g., JSON or database storage) for planet data across sessions.
-*   Optimize sorting with a priority queue for large datasets.
+## Implementation Highlights
+
+- **Planet Hierarchy**  
+  The abstract `Planet` class provides methods like `displayInfo()` and `classifyBody()`, which are overridden in subclasses and call their parent implementations as appropriate.
+
+- **ID Generation**  
+  A static `nextID` counter ensures sequential, immutable planet identifiers.
+
+- **Gravity Calculation**  
+  The method `calculateGravity()` computes gravity and is integrated into each subclass’s display logic.
+
+- **Sorting & Top-5 Retrieval**  
+  Planets can be sorted by radiation level, and the top 5 highest-radiation planets can be retrieved.
+
+- **Robust CLI UI**  
+  The driver features multi-layered menus with input validation and error handling.
+
+## Development Process
+
+1. **Class Construction**  
+   Defined the abstract `Planet` class and its concrete subclasses. Refined static ID generation logic after initial issues.
+
+2. **API Development**  
+   Built the `PlanetSystem` service layer, enabling addition, removal, lookup, sorting, and top-5 extraction.
+
+3. **Iterative Refinement**  
+   Debugged and improved integration between the API and CLI, fixing bugs in deletion logic and sorting.
+
+4. **Testing & Validation**  
+   Manual tests via the CLI confirmed correct behavior of CRUD operations and sorting.
+
+## Challenges & Solutions
+
+- **Static ID Management**  
+  Implemented a thread-safe static counter for planet IDs.
+
+- **Abstract Method Invocation**  
+  Ensured proper use of `@Override` annotations and correct superclass method calls.
+
+- **Sorting Algorithm**  
+  Resolved bugs in the radiation-level comparator and added unit tests.
+
+- **Menu Design**  
+  Built a hierarchical menu system for usability and future extensibility.
+
+## Future Improvements
+
+- Add automated unit tests (e.g., JUnit) for all public methods.
+- Refactor the CLI driver to support graphical or web-based interfaces.
+- Implement data persistence (JSON or database) for planets.
+- Optimize sorting using priority queues for scalability.
+
+## License
+
+This project is licensed under the MIT License – see the `LICENSE` file for details.
+
+* * *
+
+## Contact
+
+*   Author: JaZeeGH
+*   GitHub: [https://github.com/JaZeeGH](https://github.com/JaZeeGH)
+
+---
+
+*Explore, manage, and simulate your own planetary system with Solar-System!*
