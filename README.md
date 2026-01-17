@@ -2,14 +2,13 @@
 
 ## Table of Contents
 
-1.  [Overview]
-2.  [Features]
-3.  [Implementation Highlights]
-4.  [Development Process]
-5.  [Future Improvements]
-6.  [Project Structure]
-8.  [License]
-9.  [Contact]
+1.  [Overview](#Overview)
+2.  [Features](#Features)
+3.  [Implementation Highlights](#Implementation-Highlights)
+4.  [Development Process](#Development-Process)
+5.  [Future Improvements](#Future-Improvements)
+6.  [Challenges & Solutions](#Challenges-&-Solutions)
+8.  [License](#License)
 
 ## Overview
 
@@ -87,14 +86,3 @@ Solar-System is a planetary simulation application implementing three planet typ
 ## License
 
 This project is licensed under the MIT License – see the `LICENSE` file for details.
-
-* * *
-
-## Contact
-
-*   Author: JaZeeGH
-*   GitHub: [https://github.com/JaZeeGH](https://github.com/JaZeeGH)
-
----
-
-*Explore, manage, and simulate your own planetary system with Solar-System!*
